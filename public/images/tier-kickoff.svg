@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+<rect x="0" y="0" width="100" height="600" fill="#15803d"/><rect x="100" y="0" width="100" height="600" fill="#16a34a"/><rect x="200" y="0" width="100" height="600" fill="#15803d"/><rect x="300" y="0" width="100" height="600" fill="#16a34a"/><rect x="400" y="0" width="100" height="600" fill="#15803d"/><rect x="500" y="0" width="100" height="600" fill="#16a34a"/><rect x="600" y="0" width="100" height="600" fill="#15803d"/><rect x="700" y="0" width="100" height="600" fill="#16a34a"/><rect x="800" y="0" width="100" height="600" fill="#15803d"/><rect x="900" y="0" width="100" height="600" fill="#16a34a"/><rect x="1000" y="0" width="100" height="600" fill="#15803d"/><rect x="1100" y="0" width="100" height="600" fill="#16a34a"/>
+<g fill="none" stroke="#fff" stroke-opacity="0.8" stroke-width="5">
+<line x1="0" y1="470" x2="1200" y2="470"/>
+<circle cx="600" cy="470" r="150" stroke-opacity="0.35"/>
+</g>
+<ellipse cx="600" cy="478" rx="92" ry="18" fill="#052e16" opacity="0.45"/>
+<circle cx="600" cy="385" r="88" fill="#f8fafc"/>
+<circle cx="600" cy="385" r="88" fill="none" stroke="#cbd5e1" stroke-width="3"/>
+<polygon points="600,330 640,358 625,404 575,404 560,358" fill="#0f172a"/>
+<g stroke="#0f172a" stroke-width="4" stroke-linecap="round">
+<line x1="600" y1="330" x2="600" y2="300"/><line x1="640" y1="358" x2="672" y2="342"/>
+<line x1="625" y1="404" x2="650" y2="434"/><line x1="575" y1="404" x2="550" y2="434"/><line x1="560" y1="358" x2="528" y2="342"/>
+</g>
+</svg>

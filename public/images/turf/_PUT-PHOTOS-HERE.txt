@@ -1,0 +1,10 @@
+Put your real photos in this folder with these exact names:
+
+  hero.jpg        Turf page banner and closing section. 1920x1080, landscape.
+  kickoff.jpg     Kickoff Plan card. 1200x600.
+  pro-league.jpg  Pro League Plan card. 1200x600.
+  champions.jpg   Champions Plan card. 1200x600.
+
+Keep each file under about 300 KB (hero) / 150 KB (cards) so the page loads fast on mobile data.
+If a photo is missing, an illustrated fallback shows instead.
+To use .webp or .png, change the file extension in app/lib/images.ts.
