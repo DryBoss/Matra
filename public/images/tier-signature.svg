@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice"><style>.rays{transform-origin:600px 300px;animation:spin 50s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.glow{animation:glow 3.4s ease-in-out infinite}@keyframes glow{0%,100%{opacity:.6}50%{opacity:1}}.draw{stroke-dasharray:420;stroke-dashoffset:420;animation:draw 4s ease-in-out infinite}@keyframes draw{0%{stroke-dashoffset:420}60%,100%{stroke-dashoffset:0}}@media (prefers-reduced-motion: reduce){*{animation:none !important}}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e1b4b"/><stop offset="1" stop-color="#6d28d9"/></linearGradient><radialGradient id="halo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ddd6fe" stop-opacity="0.45"/><stop offset="1" stop-color="#ddd6fe" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="600" fill="url(#bg)"/>
+<g class="rays" stroke="#ddd6fe" stroke-opacity="0.08" stroke-width="40"><line x1="600" y1="300" x2="100" y2="-100"/><line x1="600" y1="300" x2="1100" y2="-100"/><line x1="600" y1="300" x2="1300" y2="300"/><line x1="600" y1="300" x2="-100" y2="300"/><line x1="600" y1="300" x2="100" y2="700"/><line x1="600" y1="300" x2="1100" y2="700"/></g>
+<circle class="glow" cx="600" cy="300" r="300" fill="url(#halo)"/>
+<rect x="290" y="150" width="620" height="300" rx="20" fill="#f8fafc"/>
+<rect x="290" y="150" width="620" height="38" rx="20" fill="#e2e8f0"/><rect x="290" y="170" width="620" height="18" fill="#e2e8f0"/>
+<g fill="#94a3b8"><circle cx="316" cy="169" r="6"/><circle cx="336" cy="169" r="6"/><circle cx="356" cy="169" r="6"/></g>
+<rect x="390" y="158" width="420" height="22" rx="11" fill="#fff"/><rect x="408" y="166" width="12" height="9" rx="2" fill="#16a34a"/><text x="430" y="174" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#1e293b">yourname.com</text>
+<path class="draw" d="M 350 330 c 30 -90 60 -90 60 -20 c 0 50 20 50 40 10 c 14 -26 30 -26 30 0 c 0 24 24 24 40 -6 c 20 -34 50 -34 60 0 c 6 20 30 24 56 -10 c 20 -26 40 -8 70 -2" fill="none" stroke="#7c3aed" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="350" y="388" width="300" height="12" rx="6" fill="#cbd5e1"/><rect x="350" y="412" width="200" height="10" rx="5" fill="#e2e8f0"/>
+<g transform="translate(840 150)"><circle r="46" fill="#fbbf24"/><circle r="36" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="3"/><path d="M 0 -22 l 7 15 l 16 2 l -12 11 l 3 16 l -14 -8 l -14 8 l 3 -16 l -12 -11 l 16 -2 z" fill="#fff"/></g>
+</svg>

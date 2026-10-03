@@ -21,9 +21,9 @@ const bodyFont = Hind_Siliguri({
 });
 
 export const metadata: Metadata = {
-  title: "Matra | Free software for local businesses in Bangladesh",
+  title: "Matra | Free websites and software for local businesses and creators in Bangladesh",
   description:
-    "We build your digital system for free. You pay only when you make money. Online booking, CRM and bKash tracking for sports turfs, with more types of business coming soon.",
+    "We build your digital system for free. You pay only when you make money. Online booking, ordering, CRM and bKash tracking for sports turfs, F-commerce sellers, cloud kitchens, restaurants and food carts, plus personal portfolio websites.",
 };
 
 export const viewport: Viewport = {

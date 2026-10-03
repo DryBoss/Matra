@@ -1,14 +1,15 @@
 import Link from "next/link";
 import {
+  Briefcase,
   ChefHat,
   ChevronRight,
   Quote,
-  Stethoscope,
+  ShoppingBag,
+  Store,
   Trophy,
 } from "lucide-react";
 import Reveal from "./components/Reveal";
 import SampleBooking from "./components/SampleBooking";
-import { COMING_SOON_IMAGES } from "./lib/images";
 import { TESTIMONIALS } from "./lib/content";
 import { headingStyle } from "./lib/styles";
 
@@ -58,7 +59,7 @@ function Hero() {
             className="animate-fade-up text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
             style={{ ...headingStyle, animationDelay: "100ms" }}
           >
-            Software for local businesses, with zero risk.
+            Websites for local businesses and creators, with zero risk.
           </h1>
           <p
             className="animate-fade-up mt-6 max-w-xl text-lg leading-relaxed text-slate-200"
@@ -77,7 +78,7 @@ function Hero() {
               href="#sectors"
               className="btn-press inline-flex items-center justify-center rounded-full bg-emerald-500 px-7 py-3.5 font-semibold text-slate-950 hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
             >
-              Find your business
+              Find your solution
             </a>
             <a
               href="#contact"
@@ -116,129 +117,145 @@ function Sectors() {
               className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl"
               style={headingStyle}
             >
-              Choose your kind of business
+              Pick what you need built
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-slate-600">
-              We build for one kind of business at a time and do it properly.
-              Sports turfs are open now. Open it to see the plans and what is
-              included.
+              Each page below is built for a different kind of work, with its own
+              features and plans. Open yours to see what is included and how
+              the pricing works.
             </p>
           </div>
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
-          {/* Active card: links to the full turf page */}
-          <Reveal className="h-full">
-            <Link
-              href="/sectors/turf"
-              className="group relative flex h-full flex-col items-start overflow-hidden rounded-2xl border-2 border-emerald-600 bg-white p-6 text-left shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-6">
+          {SECTORS.map((sector, i) => (
+            <Reveal
+              key={sector.href}
+              delay={i * 120}
+              className={`h-full lg:col-span-2 ${i === 3 ? "lg:col-start-2" : ""}`}
             >
-              {/* The zoom happens inside this clipped wrapper, so it can never
-                  cover the icon below. */}
-              <div
-                aria-hidden
-                className="relative -mx-6 -mt-6 mb-5 h-32 w-[calc(100%+3rem)] overflow-hidden"
-              >
-                <div
-                  className="h-full w-full transition-transform duration-500 group-hover:scale-105"
-                  style={{
-                    backgroundImage: "url(/images/hero-night-turf.svg)",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center 30%",
-                  }}
-                />
-                <span className="absolute right-3 top-3 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-3 py-1 text-xs font-medium text-white shadow">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
-                  </span>
-                  Open now
-                </span>
-              </div>
-              <span className="relative z-10 -mt-12 mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-lg ring-4 ring-white transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
-                <Trophy className="h-6 w-6" aria-hidden />
-              </span>
-              <span
-                className="mt-3 text-xl font-semibold text-slate-900"
-                style={headingStyle}
-              >
-                Sports Turfs
-              </span>
-              <span className="mt-2 text-slate-600">
-                Online booking, customer records and payment tracking for turf
-                owners.
-              </span>
-              <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-emerald-700">
-                View plans and details
-                <ChevronRight
-                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                  aria-hidden
-                />
-              </span>
-            </Link>
-          </Reveal>
-
-          <Reveal delay={120} className="h-full">
-            <ComingSoonCard
-              icon={<Stethoscope className="h-6 w-6" aria-hidden />}
-              title="Doctor Chambers"
-              body="Appointments and patient queues for private chambers."
-              image={COMING_SOON_IMAGES.doctors}
-            />
-          </Reveal>
-          <Reveal delay={240} className="h-full">
-            <ComingSoonCard
-              icon={<ChefHat className="h-6 w-6" aria-hidden />}
-              title="F-Commerce & Cloud Kitchens"
-              body="Orders from Facebook and WhatsApp in one place."
-              image={COMING_SOON_IMAGES.kitchens}
-            />
-          </Reveal>
+              <SectorCard sector={sector} />
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-function ComingSoonCard({
-  icon,
-  title,
-  body,
-  image,
-}: {
-  icon: React.ReactNode;
+type Sector = {
+  href: string;
   title: string;
   body: string;
   image: string;
-}) {
+  icon: React.ReactNode;
+  border: string;
+  iconBox: string;
+  cta: string;
+  outline: string;
+};
+
+const SECTORS: Sector[] = [
+  {
+    href: "/sectors/turf",
+    title: "Sports Turfs",
+    body: "Online booking, customer records and payment tracking for turf owners.",
+    image: "/images/hero-night-turf.svg",
+    icon: <Trophy className="h-6 w-6" aria-hidden />,
+    border: "border-emerald-600",
+    iconBox: "bg-emerald-600",
+    cta: "text-emerald-700",
+    outline: "focus-visible:outline-emerald-600",
+  },
+  {
+    href: "/sectors/f-commerce",
+    title: "F-Commerce Sellers",
+    body: "Your own online store for your Facebook page, with orders, couriers and payments in one list.",
+    image: "/images/hero-fcommerce.svg",
+    icon: <ShoppingBag className="h-6 w-6" aria-hidden />,
+    border: "border-blue-600",
+    iconBox: "bg-blue-600",
+    cta: "text-blue-700",
+    outline: "focus-visible:outline-blue-600",
+  },
+  {
+    href: "/sectors/cloud-kitchen",
+    title: "Cloud Kitchens",
+    body: "A direct ordering website, a live kitchen board and bKash tracking for home and cloud kitchens.",
+    image: "/images/hero-kitchen.svg",
+    icon: <ChefHat className="h-6 w-6" aria-hidden />,
+    border: "border-orange-600",
+    iconBox: "bg-orange-600",
+    cta: "text-orange-700",
+    outline: "focus-visible:outline-orange-600",
+  },
+  {
+    href: "/sectors/portfolio",
+    title: "Portfolio Websites",
+    body: "A personal website that shows your work, collects client enquiries and shows who visits.",
+    image: "/images/hero-portfolio.svg",
+    icon: <Briefcase className="h-6 w-6" aria-hidden />,
+    border: "border-violet-600",
+    iconBox: "bg-violet-600",
+    cta: "text-violet-700",
+    outline: "focus-visible:outline-violet-600",
+  },
+  {
+    href: "/sectors/restaurant",
+    title: "Restaurants & Food Carts",
+    body: "QR menus, table and takeaway orders, and daily sales in one place for restaurants, cafes and street food.",
+    image: "/images/hero-restaurant.svg",
+    icon: <Store className="h-6 w-6" aria-hidden />,
+    border: "border-rose-600",
+    iconBox: "bg-rose-600",
+    cta: "text-rose-700",
+    outline: "focus-visible:outline-rose-600",
+  },
+];
+
+function SectorCard({ sector }: { sector: Sector }) {
   return (
-    <div
-      aria-disabled="true"
-      className="relative flex h-full cursor-not-allowed select-none flex-col items-start overflow-hidden rounded-2xl border-2 border-dashed border-slate-300 bg-slate-100 p-6 opacity-70"
+    <Link
+      href={sector.href}
+      className={`group relative flex h-full flex-col items-start overflow-hidden rounded-2xl border-2 bg-white p-6 text-left shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${sector.border} ${sector.outline}`}
     >
+      {/* The zoom happens inside this clipped wrapper, so it can never
+          cover the icon below. */}
       <div
         aria-hidden
-        className="-mx-6 -mt-6 mb-5 h-32 w-[calc(100%+3rem)]"
-        style={{
-          backgroundImage: `url(${image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
-      <span className="absolute right-4 top-4 rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-white shadow">
-        Coming Soon
-      </span>
-      <span className="relative z-10 -mt-12 mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-300 text-slate-600 shadow-lg ring-4 ring-slate-100">
-        {icon}
+        className="relative -mx-6 -mt-6 mb-5 h-32 w-[calc(100%+3rem)] overflow-hidden"
+      >
+        <div
+          className="h-full w-full transition-transform duration-500 group-hover:scale-105"
+          style={{
+            backgroundImage: `url(${sector.image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center 30%",
+          }}
+        />
+      </div>
+      <span
+        className={`relative z-10 -mt-12 mb-2 flex h-12 w-12 items-center justify-center rounded-xl text-white shadow-lg ring-4 ring-white transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 ${sector.iconBox}`}
+      >
+        {sector.icon}
       </span>
       <span
-        className="mt-3 text-xl font-semibold text-slate-700"
+        className="mt-3 text-xl font-semibold text-slate-900"
         style={headingStyle}
       >
-        {title}
+        {sector.title}
       </span>
-      <span className="mt-2 text-slate-500">{body}</span>
-    </div>
+      <span className="mt-2 flex-1 text-slate-600">{sector.body}</span>
+      <span
+        className={`mt-5 inline-flex items-center gap-1 text-sm font-semibold ${sector.cta}`}
+      >
+        View plans and details
+        <ChevronRight
+          className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+          aria-hidden
+        />
+      </span>
+    </Link>
   );
 }
 
@@ -259,7 +276,7 @@ function Testimonials() {
               className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl"
               style={headingStyle}
             >
-              What turf owners say
+              What our customers say
             </h2>
           </div>
         </Reveal>

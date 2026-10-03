@@ -18,7 +18,7 @@ export default function Header() {
             href="/#sectors"
             className="hidden rounded-full px-3 py-2 text-slate-300 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400 sm:inline-block"
           >
-            Businesses
+            Solutions
           </Link>
           <Link
             href="/#reviews"

@@ -103,17 +103,20 @@ export const TESTIMONIALS = [
       "I didn't have to pay anything to get started. My custom website was live in days, and I stopped writing slots in my notebook.",
     name: "Rafiq Ahmed",
     role: "Turf Manager, Chattogram",
+    sector: "Sports Turf",
   },
   {
     quote:
-      "I was worried about fixed costs. Here I only paid when someone actually booked online. After a few months I moved to the flat plan.",
-    name: "Nusrat Jahan",
-    role: "Turf Owner, Chattogram",
+      "Before, every order was a long chat in my inbox. Now customers order from one link and I see everything in a single list.",
+    name: "Sadia Rahman",
+    role: "Online Fashion Seller, Chattogram",
+    sector: "F-Commerce",
   },
   {
     quote:
-      "My staff learned it in one afternoon. The analytics dashboard shows every bKash payment without us manually checking.",
-    name: "Imran Hossain",
-    role: "Turf Manager, Dhaka",
+      "I only paid when an order came in. The kitchen board keeps our evening rush calm, and I can see which dishes sell best.",
+    name: "Tanvir Hasan",
+    role: "Cloud Kitchen Owner, Chattogram",
+    sector: "Cloud Kitchen",
   },
 ];

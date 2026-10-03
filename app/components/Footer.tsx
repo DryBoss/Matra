@@ -16,7 +16,7 @@ export default function Footer() {
               {BRAND}
             </p>
             <p className="mt-3 max-w-sm leading-relaxed text-slate-400">
-              Free software for local businesses in Bangladesh. You pay only
+              Free websites and software for local businesses and creators in Bangladesh. You pay only
               when you earn.
             </p>
           </div>
@@ -67,9 +67,12 @@ export default function Footer() {
             <p className="font-semibold text-white">Explore</p>
             <ul className="mt-4 space-y-3 text-sm">
               {[
-                { label: "Businesses", href: "/#sectors" },
+                { label: "Solutions", href: "/#sectors" },
                 { label: "Sports Turfs", href: "/sectors/turf" },
-                { label: "Plans", href: "/sectors/turf#plans" },
+                { label: "F-Commerce", href: "/sectors/f-commerce" },
+                { label: "Cloud Kitchens", href: "/sectors/cloud-kitchen" },
+                { label: "Restaurants & Food Carts", href: "/sectors/restaurant" },
+                { label: "Portfolio Websites", href: "/sectors/portfolio" },
                 { label: "Reviews", href: "/#reviews" },
               ].map(({ label, href }) => (
                 <li key={label}>

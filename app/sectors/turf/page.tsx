@@ -95,7 +95,7 @@ function TurfHero() {
             className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1"
             aria-hidden
           />
-          All businesses
+          All solutions
         </Link>
 
         <div className="mt-8 grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
