@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e1b4b"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fde68a"/><stop offset="0.5" stop-color="#f59e0b"/><stop offset="1" stop-color="#b45309"/></linearGradient>
+<radialGradient id="halo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#93c5fd" stop-opacity="0.5"/><stop offset="1" stop-color="#93c5fd" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="600" fill="url(#bg)"/>
+<g class="rays" stroke="#bfdbfe" stroke-opacity="0.08" stroke-width="40"><line x1="600" y1="300" x2="100" y2="-100"/><line x1="600" y1="300" x2="1100" y2="-100"/><line x1="600" y1="300" x2="1300" y2="300"/><line x1="600" y1="300" x2="-100" y2="300"/><line x1="600" y1="300" x2="100" y2="700"/><line x1="600" y1="300" x2="1100" y2="700"/></g>
+<circle class="glow" cx="600" cy="300" r="300" fill="url(#halo)"/>
+<rect x="270" y="110" width="660" height="390" rx="20" fill="#f8fafc"/>
+<path d="M 270 130 a 20 20 0 0 1 20 -20 h 620 a 20 20 0 0 1 20 20 v 28 h -660 z" fill="#cbd5e1"/>
+<g fill="#94a3b8"><circle cx="298" cy="134" r="7"/><circle cx="322" cy="134" r="7"/><circle cx="346" cy="134" r="7"/></g>
+<rect x="390" y="122" width="420" height="24" rx="12" fill="#fff"/>
+<path d="M 410 134 v -5 a 5 5 0 0 1 10 0 v 5" fill="none" stroke="#16a34a" stroke-width="2.5"/><rect x="407" y="134" width="16" height="9" rx="2" fill="#16a34a"/>
+<text x="436" y="140" font-family="system-ui,sans-serif" font-size="15" font-weight="600" fill="#1e293b">yourbrand.com</text>
+<rect x="290" y="176" width="620" height="110" rx="14" fill="#2563eb"/>
+<text x="320" y="224" font-family="system-ui,sans-serif" font-size="34" font-weight="800" fill="#fff">Your Brand</text>
+<rect x="320" y="240" width="190" height="12" rx="6" fill="#bfdbfe"/><rect x="320" y="260" width="130" height="10" rx="5" fill="#93c5fd"/>
+<g><rect x="290" y="304" width="140" height="170" rx="12" fill="#e0e7ff"/><rect x="450" y="304" width="140" height="170" rx="12" fill="#dbeafe"/><rect x="610" y="304" width="140" height="170" rx="12" fill="#fef3c7"/><rect x="770" y="304" width="140" height="170" rx="12" fill="#fee2e2"/>
+<circle cx="360" cy="372" r="30" fill="#818cf8"/><circle cx="520" cy="372" r="30" fill="#60a5fa"/><circle cx="680" cy="372" r="30" fill="#fbbf24"/><circle cx="840" cy="372" r="30" fill="#f87171"/>
+<g fill="#94a3b8"><rect x="306" y="428" width="90" height="9" rx="4"/><rect x="466" y="428" width="90" height="9" rx="4"/><rect x="626" y="428" width="90" height="9" rx="4"/><rect x="786" y="428" width="90" height="9" rx="4"/></g></g>
+<g transform="translate(880 90)"><circle r="46" fill="url(#gold)"/><circle r="36" fill="none" stroke="#fff" stroke-opacity="0.5" stroke-width="3"/><path d="M 0 -22 l 7 15 l 16 2 l -12 11 l 3 16 l -14 -8 l -14 8 l 3 -16 l -12 -11 l 16 -2 z" fill="#fff"/></g>
+<g fill="#fff"><circle class="tw" cx="150" cy="150" r="3"/><circle class="tw" cx="1060" cy="470" r="3" style="animation-delay:1.4s"/><circle class="tw" cx="1100" cy="150" r="2.5" style="animation-delay:.7s"/></g>
+</svg>

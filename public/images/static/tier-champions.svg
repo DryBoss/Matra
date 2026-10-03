@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice"><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#022c22"/><stop offset="1" stop-color="#064e3b"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fde68a"/><stop offset="0.5" stop-color="#f59e0b"/><stop offset="1" stop-color="#b45309"/></linearGradient>
+<radialGradient id="halo" cx="0.5" cy="0.45" r="0.5"><stop offset="0" stop-color="#fde68a" stop-opacity="0.45"/><stop offset="1" stop-color="#fde68a" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="600" fill="url(#bg)"/>
+<g class="rays" stroke="#fde68a" stroke-opacity="0.08" stroke-width="40">
+<line x1="600" y1="300" x2="100" y2="-100"/><line x1="600" y1="300" x2="400" y2="-100"/><line x1="600" y1="300" x2="800" y2="-100"/><line x1="600" y1="300" x2="1100" y2="-100"/>
+<line x1="600" y1="300" x2="-100" y2="200"/><line x1="600" y1="300" x2="1300" y2="200"/>
+</g>
+<ellipse class="glow" cx="600" cy="280" rx="420" ry="300" fill="url(#halo)"/>
+<path d="M 500 150 H 700 V 260 C 700 322 654 360 600 360 C 546 360 500 322 500 260 Z" fill="url(#gold)"/>
+<path d="M 500 175 C 440 175 432 262 510 290" fill="none" stroke="url(#gold)" stroke-width="16" stroke-linecap="round"/>
+<path d="M 700 175 C 760 175 768 262 690 290" fill="none" stroke="url(#gold)" stroke-width="16" stroke-linecap="round"/>
+<rect x="582" y="358" width="36" height="70" fill="url(#gold)"/>
+<rect x="530" y="428" width="140" height="26" rx="6" fill="url(#gold)"/>
+<rect x="505" y="454" width="190" height="34" rx="6" fill="#92400e"/>
+<path d="M 540 175 C 540 235 556 290 600 330" fill="none" stroke="#fff" stroke-opacity="0.35" stroke-width="10" stroke-linecap="round"/>
+<path class="tw" style="animation-delay:-0.2s" fill="#fff" d="M 440 150 L 445.6 164.4 L 460 170 L 445.6 175.6 L 440 190 L 434.4 175.6 L 420 170 L 434.4 164.4 Z"/><path class="tw" style="animation-delay:-1.1s" fill="#fff" d="M 770 134 L 774.48 145.52 L 786 150 L 774.48 154.48 L 770 166 L 765.52 154.48 L 754 150 L 765.52 145.52 Z"/><path class="tw" style="animation-delay:-2.0s" fill="#fff" d="M 850 308 L 856.16 323.84 L 872 330 L 856.16 336.16 L 850 352 L 843.84 336.16 L 828 330 L 843.84 323.84 Z"/><path class="tw" style="animation-delay:-2.8s" fill="#fff" d="M 360 346 L 363.92 356.08 L 374 360 L 363.92 363.92 L 360 374 L 356.08 363.92 L 346 360 L 356.08 356.08 Z"/><path class="tw" style="animation-delay:-0.7s" fill="#fff" d="M 690 80 L 693.36 88.64 L 702 92 L 693.36 95.36 L 690 104 L 686.64 95.36 L 678 92 L 686.64 88.64 Z"/></svg>

@@ -7,10 +7,12 @@ import {
   ShoppingBag,
   Store,
   Trophy,
+  Wrench,
 } from "lucide-react";
 import Reveal from "./components/Reveal";
 import SampleBooking from "./components/SampleBooking";
 import { TESTIMONIALS } from "./lib/content";
+import { svgBg } from "./lib/images";
 import { headingStyle } from "./lib/styles";
 
 export default function Page() {
@@ -37,11 +39,7 @@ function Hero() {
       <div
         aria-hidden
         className="absolute inset-0 animate-slow-zoom"
-        style={{
-          backgroundImage: "url(/images/hero-overall.svg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center bottom",
-        }}
+        style={svgBg("/images/hero-overall.svg", "center bottom")}
       />
       {/* Keeps the text readable over the artwork */}
       <div
@@ -127,13 +125,9 @@ function Sectors() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {SECTORS.map((sector, i) => (
-            <Reveal
-              key={sector.href}
-              delay={i * 120}
-              className={`h-full lg:col-span-2 ${i === 3 ? "lg:col-start-2" : ""}`}
-            >
+            <Reveal key={sector.href} delay={(i % 3) * 120} className="h-full">
               <SectorCard sector={sector} />
             </Reveal>
           ))}
@@ -155,18 +149,12 @@ type Sector = {
   outline: string;
 };
 
+/*
+ * Card order on the home page (three per row on desktop):
+ *   Row 1: high-volume niches   - F-Commerce, Restaurants & Food Carts, Cloud Kitchens
+ *   Row 2: specialised/broad    - Sports Turfs, Portfolio Websites, Custom Solutions
+ */
 const SECTORS: Sector[] = [
-  {
-    href: "/sectors/turf",
-    title: "Sports Turfs",
-    body: "Online booking, customer records and payment tracking for turf owners.",
-    image: "/images/hero-night-turf.svg",
-    icon: <Trophy className="h-6 w-6" aria-hidden />,
-    border: "border-emerald-600",
-    iconBox: "bg-emerald-600",
-    cta: "text-emerald-700",
-    outline: "focus-visible:outline-emerald-600",
-  },
   {
     href: "/sectors/f-commerce",
     title: "F-Commerce Sellers",
@@ -177,6 +165,17 @@ const SECTORS: Sector[] = [
     iconBox: "bg-blue-600",
     cta: "text-blue-700",
     outline: "focus-visible:outline-blue-600",
+  },
+  {
+    href: "/sectors/restaurant",
+    title: "Restaurants & Food Carts",
+    body: "QR menus, table and takeaway orders, and daily sales in one place for restaurants, cafes and street food.",
+    image: "/images/hero-restaurant.svg",
+    icon: <Store className="h-6 w-6" aria-hidden />,
+    border: "border-rose-600",
+    iconBox: "bg-rose-600",
+    cta: "text-rose-700",
+    outline: "focus-visible:outline-rose-600",
   },
   {
     href: "/sectors/cloud-kitchen",
@@ -190,6 +189,17 @@ const SECTORS: Sector[] = [
     outline: "focus-visible:outline-orange-600",
   },
   {
+    href: "/sectors/turf",
+    title: "Sports Turfs",
+    body: "Online booking, customer records and payment tracking for turf owners.",
+    image: "/images/hero-night-turf.svg",
+    icon: <Trophy className="h-6 w-6" aria-hidden />,
+    border: "border-emerald-600",
+    iconBox: "bg-emerald-600",
+    cta: "text-emerald-700",
+    outline: "focus-visible:outline-emerald-600",
+  },
+  {
     href: "/sectors/portfolio",
     title: "Portfolio Websites",
     body: "A personal website that shows your work, collects client enquiries and shows who visits.",
@@ -201,15 +211,15 @@ const SECTORS: Sector[] = [
     outline: "focus-visible:outline-violet-600",
   },
   {
-    href: "/sectors/restaurant",
-    title: "Restaurants & Food Carts",
-    body: "QR menus, table and takeaway orders, and daily sales in one place for restaurants, cafes and street food.",
-    image: "/images/hero-restaurant.svg",
-    icon: <Store className="h-6 w-6" aria-hidden />,
-    border: "border-rose-600",
-    iconBox: "bg-rose-600",
-    cta: "text-rose-700",
-    outline: "focus-visible:outline-rose-600",
+    href: "/sectors/custom",
+    title: "Custom Solutions",
+    body: "Something else? Tell us how your work runs and we will build the system around it.",
+    image: "/images/hero-custom.svg",
+    icon: <Wrench className="h-6 w-6" aria-hidden />,
+    border: "border-cyan-600",
+    iconBox: "bg-cyan-600",
+    cta: "text-cyan-700",
+    outline: "focus-visible:outline-cyan-600",
   },
 ];
 
@@ -227,11 +237,7 @@ function SectorCard({ sector }: { sector: Sector }) {
       >
         <div
           className="h-full w-full transition-transform duration-500 group-hover:scale-105"
-          style={{
-            backgroundImage: `url(${sector.image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center 30%",
-          }}
+          style={svgBg(sector.image, "center 30%")}
         />
       </div>
       <span

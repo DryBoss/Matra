@@ -75,6 +75,24 @@ export const THEMES = {
     ping: "bg-rose-400",
     keep: "text-rose-400",
   },
+  cyan: {
+    heroBg: "bg-cyan-950",
+    outline: "focus-visible:outline-cyan-300",
+    outlineDark: "focus-visible:outline-cyan-400",
+    outlineLight: "focus-visible:outline-cyan-600",
+    btn: "bg-cyan-500 text-slate-950 hover:bg-cyan-400",
+    iconBox: "bg-cyan-100 text-cyan-700",
+    check: "text-cyan-600",
+    checkDark: "text-cyan-400",
+    step: "bg-cyan-600",
+    featuredRing: "ring-cyan-500",
+    featuredBadge: "bg-cyan-500 text-slate-950",
+    chip: "bg-cyan-50 text-cyan-700",
+    chipDark: "bg-cyan-500/15 text-cyan-300",
+    liveBadge: "bg-cyan-500/15 text-cyan-300",
+    ping: "bg-cyan-400",
+    keep: "text-cyan-400",
+  },
 } as const;
 
 export type ThemeKey = keyof typeof THEMES;

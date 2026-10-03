@@ -72,6 +72,7 @@ export default function Footer() {
                 { label: "F-Commerce", href: "/sectors/f-commerce" },
                 { label: "Cloud Kitchens", href: "/sectors/cloud-kitchen" },
                 { label: "Restaurants & Food Carts", href: "/sectors/restaurant" },
+                { label: "Custom Solutions", href: "/sectors/custom" },
                 { label: "Portfolio Websites", href: "/sectors/portfolio" },
                 { label: "Reviews", href: "/#reviews" },
               ].map(({ label, href }) => (

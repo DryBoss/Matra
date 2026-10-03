@@ -11,6 +11,7 @@
  *   /public/images/kitchen/       cloud kitchens
  *   /public/images/portfolio/     portfolio websites
  *   /public/images/restaurant/    restaurants and food carts
+ *   /public/images/custom/        custom solutions
  */
 export type Slot = { photo: string; fallback: string };
 
@@ -124,13 +125,57 @@ export const IMAGES = {
     photo: "/images/restaurant/chefs-table.jpg",
     fallback: "/images/tier-chefstable.svg",
   },
+
+  /* ---- Custom solutions ---- */
+  cuHero: {
+    photo: "/images/custom/hero.jpg",
+    fallback: "/images/hero-custom.svg",
+  },
+  cuCta: {
+    photo: "/images/custom/hero.jpg",
+    fallback: "/images/hero-custom.svg",
+  },
+  cuBlueprint: {
+    photo: "/images/custom/blueprint.jpg",
+    fallback: "/images/tier-blueprint.svg",
+  },
+  cuBuilder: {
+    photo: "/images/custom/builder.jpg",
+    fallback: "/images/tier-builder.svg",
+  },
+  cuPartner: {
+    photo: "/images/custom/partner.jpg",
+    fallback: "/images/tier-partner.svg",
+  },
 } as const;
 
+/**
+ * Phones get a still copy of every illustration (in /images/static/) because
+ * animated SVG backgrounds repaint constantly and make scrolling laggy. The
+ * swap is done in globals.css via the --bg-static variable set below.
+ * If you add or change an illustration, copy it to /images/static/ without
+ * its <style> block.
+ */
+export function stillArt(path: string) {
+  return path.replace("/images/", "/images/static/");
+}
+
 /** Two stacked backgrounds: the photo on top, the fallback art underneath. */
-export function layeredBg(slot: Slot) {
+export function layeredBg(slot: Slot): React.CSSProperties {
   return {
     backgroundImage: `url(${slot.photo}), url(${slot.fallback})`,
+    ["--bg-static" as string]: `url(${slot.photo}), url(${stillArt(slot.fallback)})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-  } as const;
+  };
+}
+
+/** A single illustration as a cover background, with a still copy for phones. */
+export function svgBg(src: string, position = "center"): React.CSSProperties {
+  return {
+    backgroundImage: `url(${src})`,
+    ["--bg-static" as string]: `url(${stillArt(src)})`,
+    backgroundSize: "cover",
+    backgroundPosition: position,
+  };
 }

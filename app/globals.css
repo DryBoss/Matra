@@ -58,9 +58,27 @@ details[open] > p {
 [data-theme="rose"] .btn-press:hover {
   box-shadow: 0 10px 22px -10px rgba(244, 63, 94, 0.6);
 }
+[data-theme="cyan"] .btn-press:hover {
+  box-shadow: 0 10px 22px -10px rgba(6, 182, 212, 0.6);
+}
 .btn-press:active {
   transform: translateY(0) scale(0.98);
   box-shadow: none;
+}
+
+/* ---------- Phones and tablets: keep it light ----------
+   Animated SVG backgrounds, the slow hero zoom and the floating receipt all
+   repaint every frame, which makes scrolling laggy on phones. So on touch
+   devices and small screens we show still artwork and switch those off. */
+@media not all and (min-width: 768px) and (hover: hover) {
+  [style*="--bg-static"] {
+    background-image: var(--bg-static) !important;
+  }
+  .animate-slow-zoom,
+  .animate-float,
+  .animate-ping {
+    animation: none !important;
+  }
 }
 
 /* ---------- Respect "reduce motion" everywhere ---------- */

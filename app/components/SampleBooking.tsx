@@ -8,7 +8,7 @@ export default function SampleBooking() {
       style={{ animationDelay: "350ms" }}
     >
       <div className="animate-float">
-        <figure className="mx-auto w-full max-w-sm rounded-3xl border border-slate-700/70 bg-slate-900/85 p-6 shadow-2xl shadow-black/40 backdrop-blur">
+        <figure className="mx-auto w-full max-w-sm rounded-3xl border border-slate-700/70 bg-slate-900 p-6 shadow-2xl shadow-black/40">
           <figcaption className="flex items-center justify-between text-sm text-slate-400">
             <span>Sample booking, Kickoff Plan</span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-1 text-xs font-medium text-emerald-300">

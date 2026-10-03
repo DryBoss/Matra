@@ -27,7 +27,7 @@ export default function SampleOrder({
   return (
     <div className="animate-fade-up" style={{ animationDelay: "350ms" }}>
       <div className="animate-float">
-        <figure className="mx-auto w-full max-w-sm rounded-3xl border border-slate-700/70 bg-slate-900/85 p-6 shadow-2xl shadow-black/40 backdrop-blur">
+        <figure className="mx-auto w-full max-w-sm rounded-3xl border border-slate-700/70 bg-slate-900 p-6 shadow-2xl shadow-black/40">
           <figcaption className="flex items-center justify-between gap-3 text-sm text-slate-400">
             <span>{sample.caption}</span>
             <span

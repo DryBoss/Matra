@@ -379,7 +379,7 @@ function Plans() {
 
         {/* Plain-language guide to picking */}
         <Reveal className="mt-8">
-          <div className="rounded-2xl bg-white/90 p-6 ring-1 ring-slate-200 backdrop-blur sm:p-8">
+          <div className="rounded-2xl bg-white p-6 ring-1 ring-slate-200 sm:p-8">
             <h3
               className="text-lg font-semibold text-slate-900"
               style={headingStyle}
