@@ -1,4 +1,4 @@
-import { MessageCircle, UsersRound, WalletCards } from "lucide-react";
+import { Globe, BarChart3, WalletCards } from "lucide-react";
 
 export const BRAND = "Matra";
 
@@ -11,32 +11,32 @@ export const CONTACT = {
 
 export const FEATURES = [
   {
-    icon: MessageCircle,
-    title: "WhatsApp booking",
-    body: "Customers book a slot by sending a message. No app to install and no account to create.",
+    icon: Globe,
+    title: "Custom booking website",
+    body: "Give players a professional, easy-to-use website to view open slots and book instantly.",
     points: [
-      "Players book in a chat they already use",
-      "No sign-up form, no password",
-      "Fewer phone calls and notebook entries",
+      "Players book online from any device",
+      "Automated booking, no phone calls",
+      "No double-bookings or messy notebooks",
     ],
   },
   {
-    icon: UsersRound,
-    title: "Built-in CRM",
-    body: "Every player and team is saved with their booking history, so regulars are easy to find and reward.",
+    icon: BarChart3,
+    title: "CRM & Analytics",
+    body: "Automatically save player profiles and track your turf's performance with built-in analytics tools.",
     points: [
-      "See each customer's past bookings",
-      "Spot your most frequent teams",
-      "Know who to contact for empty slots",
+      "Track peak hours and popular slots",
+      "View each customer's past bookings",
+      "Spot and reward your frequent teams",
     ],
   },
   {
     icon: WalletCards,
     title: "bKash tracking",
-    body: "See which bookings are paid, which are pending, and what you earned today.",
+    body: "Keep track of revenue effortlessly. See exactly which bookings are paid or pending.",
     points: [
       "Paid and pending bookings in one list",
-      "Daily earnings at a glance",
+      "Daily earnings visible at a glance",
       "Clean records at the end of the month",
     ],
   },
@@ -48,13 +48,14 @@ export const TIERS = [
     imageKey: "kickoff" as const,
     price: "৳0",
     unit: "/mo",
-    highlight: "৳30 per booking",
-    description: "Start with no risk. You pay only when a booking comes in.",
+    highlight: "Pay as you go",
+    description:
+      "Zero risk to start. You only pay when the platform is actively used.",
     features: [
-      "WhatsApp booking",
-      "CRM for players and teams",
-      "bKash payment tracking",
-      "No monthly fee",
+      "5% fee on direct website orders",
+      "Pay only for active usage or extra features",
+      "Full CRM & Analytics access",
+      "No fixed monthly fees",
     ],
     cta: "Start for free",
     featured: false,
@@ -62,15 +63,16 @@ export const TIERS = [
   {
     name: "Pro League Plan",
     imageKey: "proLeague" as const,
-    price: "৳1,499",
+    price: "৳500",
     unit: "/mo",
-    highlight: "0% commission",
+    highlight: "Zero setup fee & Data ownership",
     description:
-      "A flat fee for turfs with steady bookings. Keep every taka you earn.",
+      "The smartest choice. Stop paying commissions and eventually just pay for basic hosting.",
     features: [
-      "Everything in Kickoff",
-      "No per-booking fee",
-      "Predictable monthly cost",
+      "0% commission on all bookings",
+      "Cost drops to ৳200/mo over time",
+      "Option to export code & database",
+      "Free custom Matra subdomain",
     ],
     cta: "Choose Pro League",
     featured: true,
@@ -78,14 +80,16 @@ export const TIERS = [
   {
     name: "Champions Plan",
     imageKey: "champions" as const,
-    price: "৳3,999",
+    price: "৳1,000",
     unit: "/mo",
     highlight: "Custom domain",
-    description: "Your turf, under your own web address.",
+    description:
+      "Premium branding. A ৳2,000 one-time setup fee gets your turf its own web address.",
     features: [
-      "Everything in Pro League",
       "Your own domain (yourturf.com)",
-      "Your branding on the booking page",
+      "Yearly domain renewal applies",
+      "Cost drops over time like Pro League",
+      "Everything in Pro League",
     ],
     cta: "Choose Champions",
     featured: false,
@@ -96,19 +100,19 @@ export const TIERS = [
 export const TESTIMONIALS = [
   {
     quote:
-      "I didn't have to pay anything to get started. The first week, bookings came in over WhatsApp and I stopped writing slots in my notebook.",
+      "I didn't have to pay anything to get started. My custom website was live in days, and I stopped writing slots in my notebook.",
     name: "Rafiq Ahmed",
     role: "Turf Manager, Chattogram",
   },
   {
     quote:
-      "I was worried about hidden costs. Here I only paid when someone actually booked. After a few months I moved to the flat plan.",
+      "I was worried about fixed costs. Here I only paid when someone actually booked online. After a few months I moved to the flat plan.",
     name: "Nusrat Jahan",
     role: "Turf Owner, Chattogram",
   },
   {
     quote:
-      "My staff learned it in one afternoon. I can see every bKash payment without calling anyone to check.",
+      "My staff learned it in one afternoon. The analytics dashboard shows every bKash payment without us manually checking.",
     name: "Imran Hossain",
     role: "Turf Manager, Dhaka",
   },

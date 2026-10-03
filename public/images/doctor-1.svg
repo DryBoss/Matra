@@ -1,17 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice"><style>.glow{animation:glow 3.4s ease-in-out infinite}@keyframes glow{0%,100%{opacity:.65}50%{opacity:1}}.n2{opacity:0}.n1{animation:n1 5s steps(1) infinite}.n2{animation:n2 5s steps(1) infinite}@keyframes n1{0%{opacity:1}50%{opacity:0}}@keyframes n2{0%{opacity:0}50%{opacity:1}}@media (prefers-reduced-motion: reduce){*{animation:none !important}}</style>
 <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0e7490"/><stop offset="1" stop-color="#164e63"/></linearGradient></defs>
 <rect width="1200" height="600" fill="url(#bg)"/>
 <g fill="#fff" opacity="0.06"><circle cx="150" cy="120" r="110"/><circle cx="1080" cy="470" r="150"/></g>
 <rect x="0" y="520" width="1200" height="80" fill="#083344"/>
 <rect x="340" y="190" width="520" height="340" fill="#f1f5f9"/>
 <rect x="320" y="170" width="560" height="28" rx="4" fill="#cbd5e1"/>
-<circle cx="600" cy="120" r="52" fill="#fff"/>
+<circle class="glow" cx="600" cy="120" r="52" fill="#fff"/>
 <path d="M 586 90 h28 v18 h18 v28 h-18 v18 h-28 v-18 h-18 v-28 h18 z" fill="#0891b2" transform="translate(0,-4)"/>
 <rect x="540" y="330" width="120" height="200" rx="6" fill="#0e7490"/>
 <rect x="552" y="342" width="96" height="188" rx="4" fill="#a5f3fc" opacity="0.85"/>
 <g fill="#7dd3fc"><rect x="370" y="225" width="110" height="90" rx="4"/><rect x="720" y="225" width="110" height="90" rx="4"/></g>
 <g stroke="#38bdf8" stroke-width="3"><line x1="370" y1="250" x2="480" y2="250"/><line x1="370" y1="275" x2="480" y2="275"/><line x1="720" y1="250" x2="830" y2="250"/><line x1="720" y1="275" x2="830" y2="275"/></g>
 <rect x="520" y="262" width="160" height="52" rx="8" fill="#0f172a"/>
-<text x="600" y="300" text-anchor="middle" font-family="monospace" font-size="34" font-weight="700" fill="#34d399">No. 12</text>
+<text class="n1" x="600" y="300" text-anchor="middle" font-family="monospace" font-size="34" font-weight="700" fill="#34d399">No. 12</text><text class="n2" x="600" y="300" text-anchor="middle" font-family="monospace" font-size="34" font-weight="700" fill="#34d399">No. 13</text>
 <g fill="#0e7490"><circle cx="410" cy="470" r="16"/><rect x="394" y="488" width="32" height="42" rx="12"/><circle cx="470" cy="470" r="16"/><rect x="454" y="488" width="32" height="42" rx="12"/></g>
 </svg>

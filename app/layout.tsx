@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Hind_Siliguri } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ScrollProgress from "./components/ScrollProgress";
 import "./globals.css";
 
 /* Bricolage Grotesque for headings, Hind Siliguri for body (it also covers
@@ -41,6 +42,10 @@ export default function RootLayout({
         className={`${displayFont.variable} ${bodyFont.variable} min-h-screen bg-slate-50 text-slate-800 antialiased`}
         style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}
       >
+        <noscript>
+          <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+        <ScrollProgress />
         <Header />
         {children}
         <Footer />

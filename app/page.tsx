@@ -6,6 +6,7 @@ import {
   Stethoscope,
   Trophy,
 } from "lucide-react";
+import Reveal from "./components/Reveal";
 import SampleBooking from "./components/SampleBooking";
 import { COMING_SOON_IMAGES } from "./lib/images";
 import { TESTIMONIALS } from "./lib/content";
@@ -30,12 +31,17 @@ function Hero() {
     <section
       id="top"
       className="relative overflow-hidden bg-slate-950 text-white"
-      style={{
-        backgroundImage: "url(/images/hero-overall.svg)",
-        backgroundSize: "cover",
-        backgroundPosition: "center bottom",
-      }}
     >
+      {/* Artwork with a slow, subtle zoom */}
+      <div
+        aria-hidden
+        className="absolute inset-0 animate-slow-zoom"
+        style={{
+          backgroundImage: "url(/images/hero-overall.svg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
+        }}
+      />
       {/* Keeps the text readable over the artwork */}
       <div
         aria-hidden
@@ -49,27 +55,33 @@ function Hero() {
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:py-32">
         <div>
           <h1
-            className="text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
-            style={headingStyle}
+            className="animate-fade-up text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
+            style={{ ...headingStyle, animationDelay: "100ms" }}
           >
             Software for local businesses, with zero risk.
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-200">
+          <p
+            className="animate-fade-up mt-6 max-w-xl text-lg leading-relaxed text-slate-200"
+            style={{ animationDelay: "220ms" }}
+          >
             We build your digital system for free. You pay only when you make
             money: a small fee per transaction, or one flat monthly price once
             you grow.
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div
+            className="animate-fade-up mt-9 flex flex-col gap-3 sm:flex-row"
+            style={{ animationDelay: "340ms" }}
+          >
             <a
               href="#sectors"
-              className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-7 py-3.5 font-semibold text-slate-950 transition-colors hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
+              className="btn-press inline-flex items-center justify-center rounded-full bg-emerald-500 px-7 py-3.5 font-semibold text-slate-950 hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
             >
               Find your business
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full border border-slate-400/60 px-7 py-3.5 font-semibold text-white transition-colors hover:border-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
+              className="btn-press inline-flex items-center justify-center rounded-full border border-slate-400/60 px-7 py-3.5 font-semibold text-white hover:border-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
             >
               Contact us
             </a>
@@ -98,75 +110,90 @@ function Sectors() {
       }}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="max-w-2xl">
-          <h2
-            className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl"
-            style={headingStyle}
-          >
-            Choose your kind of business
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-slate-600">
-            We build for one kind of business at a time and do it properly.
-            Sports turfs are open now. Open it to see the plans and what is
-            included.
-          </p>
-        </div>
+        <Reveal>
+          <div className="max-w-2xl">
+            <h2
+              className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl"
+              style={headingStyle}
+            >
+              Choose your kind of business
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-slate-600">
+              We build for one kind of business at a time and do it properly.
+              Sports turfs are open now. Open it to see the plans and what is
+              included.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
           {/* Active card: links to the full turf page */}
-          <Link
-            href="/sectors/turf"
-            className="group relative flex flex-col items-start overflow-hidden rounded-2xl border-2 border-emerald-600 bg-white p-6 text-left shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
-          >
-            {/* The zoom happens inside this clipped wrapper, so it can never
-                cover the icon below. */}
-            <div
-              aria-hidden
-              className="-mx-6 -mt-6 mb-5 h-32 w-[calc(100%+3rem)] overflow-hidden"
+          <Reveal className="h-full">
+            <Link
+              href="/sectors/turf"
+              className="group relative flex h-full flex-col items-start overflow-hidden rounded-2xl border-2 border-emerald-600 bg-white p-6 text-left shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
             >
+              {/* The zoom happens inside this clipped wrapper, so it can never
+                  cover the icon below. */}
               <div
-                className="h-full w-full transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none"
-                style={{
-                  backgroundImage: "url(/images/hero-night-turf.svg)",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center 30%",
-                }}
-              />
-            </div>
-            <span className="relative z-10 -mt-12 mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-lg ring-4 ring-white">
-              <Trophy className="h-6 w-6" aria-hidden />
-            </span>
-            <span
-              className="mt-3 text-xl font-semibold text-slate-900"
-              style={headingStyle}
-            >
-              Sports Turfs
-            </span>
-            <span className="mt-2 text-slate-600">
-              Online booking, customer records and payment tracking for turf
-              owners.
-            </span>
-            <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-emerald-700">
-              View plans and details
-              <ChevronRight
-                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                 aria-hidden
-              />
-            </span>
-          </Link>
+                className="relative -mx-6 -mt-6 mb-5 h-32 w-[calc(100%+3rem)] overflow-hidden"
+              >
+                <div
+                  className="h-full w-full transition-transform duration-500 group-hover:scale-105"
+                  style={{
+                    backgroundImage: "url(/images/hero-night-turf.svg)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center 30%",
+                  }}
+                />
+                <span className="absolute right-3 top-3 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-3 py-1 text-xs font-medium text-white shadow">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
+                  </span>
+                  Open now
+                </span>
+              </div>
+              <span className="relative z-10 -mt-12 mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-lg ring-4 ring-white transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
+                <Trophy className="h-6 w-6" aria-hidden />
+              </span>
+              <span
+                className="mt-3 text-xl font-semibold text-slate-900"
+                style={headingStyle}
+              >
+                Sports Turfs
+              </span>
+              <span className="mt-2 text-slate-600">
+                Online booking, customer records and payment tracking for turf
+                owners.
+              </span>
+              <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-emerald-700">
+                View plans and details
+                <ChevronRight
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden
+                />
+              </span>
+            </Link>
+          </Reveal>
 
-          <ComingSoonCard
-            icon={<Stethoscope className="h-6 w-6" aria-hidden />}
-            title="Doctor Chambers"
-            body="Appointments and patient queues for private chambers."
-            image={COMING_SOON_IMAGES.doctors}
-          />
-          <ComingSoonCard
-            icon={<ChefHat className="h-6 w-6" aria-hidden />}
-            title="F-Commerce & Cloud Kitchens"
-            body="Orders from Facebook and WhatsApp in one place."
-            image={COMING_SOON_IMAGES.kitchens}
-          />
+          <Reveal delay={120} className="h-full">
+            <ComingSoonCard
+              icon={<Stethoscope className="h-6 w-6" aria-hidden />}
+              title="Doctor Chambers"
+              body="Appointments and patient queues for private chambers."
+              image={COMING_SOON_IMAGES.doctors}
+            />
+          </Reveal>
+          <Reveal delay={240} className="h-full">
+            <ComingSoonCard
+              icon={<ChefHat className="h-6 w-6" aria-hidden />}
+              title="F-Commerce & Cloud Kitchens"
+              body="Orders from Facebook and WhatsApp in one place."
+              image={COMING_SOON_IMAGES.kitchens}
+            />
+          </Reveal>
         </div>
       </div>
     </section>
@@ -187,7 +214,7 @@ function ComingSoonCard({
   return (
     <div
       aria-disabled="true"
-      className="relative flex cursor-not-allowed select-none flex-col items-start overflow-hidden rounded-2xl border-2 border-dashed border-slate-300 bg-slate-100 p-6 opacity-70"
+      className="relative flex h-full cursor-not-allowed select-none flex-col items-start overflow-hidden rounded-2xl border-2 border-dashed border-slate-300 bg-slate-100 p-6 opacity-70"
     >
       <div
         aria-hidden
@@ -226,45 +253,46 @@ function Testimonials() {
       className="scroll-mt-16 border-y border-slate-200 bg-white py-16 sm:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="max-w-2xl">
-          <h2
-            className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl"
-            style={headingStyle}
-          >
-            What turf owners say
-          </h2>
-        </div>
+        <Reveal>
+          <div className="max-w-2xl">
+            <h2
+              className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl"
+              style={headingStyle}
+            >
+              What turf owners say
+            </h2>
+          </div>
+        </Reveal>
 
         <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
-          {TESTIMONIALS.map((t) => (
-            <figure
-              key={t.name}
-              className="flex flex-col rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200"
-            >
-              <Quote className="h-6 w-6 text-emerald-600" aria-hidden />
-              <blockquote className="mt-4 flex-1 leading-relaxed text-slate-700">
-                {t.quote}
-              </blockquote>
-              <figcaption className="mt-6 flex items-center gap-3">
-                <span
-                  aria-hidden
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-sm font-semibold text-white"
-                >
-                  {t.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </span>
-                <span>
-                  <span className="block font-semibold text-slate-900">
-                    {t.name}
+          {TESTIMONIALS.map((t, i) => (
+            <Reveal key={t.name} delay={i * 120} className="h-full">
+              <figure className="flex h-full flex-col rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <Quote className="h-6 w-6 text-emerald-600" aria-hidden />
+                <blockquote className="mt-4 flex-1 leading-relaxed text-slate-700">
+                  {t.quote}
+                </blockquote>
+                <figcaption className="mt-6 flex items-center gap-3">
+                  <span
+                    aria-hidden
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-sm font-semibold text-white"
+                  >
+                    {t.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
                   </span>
-                  <span className="block text-sm text-slate-500">
-                    {t.role}
+                  <span>
+                    <span className="block font-semibold text-slate-900">
+                      {t.name}
+                    </span>
+                    <span className="block text-sm text-slate-500">
+                      {t.role}
+                    </span>
                   </span>
-                </span>
-              </figcaption>
-            </figure>
+                </figcaption>
+              </figure>
+            </Reveal>
           ))}
         </div>
       </div>

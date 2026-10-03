@@ -6,8 +6,65 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ---------- Scroll reveal (see components/Reveal.tsx) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- FAQ answers ease in when a question is opened ---------- */
+@keyframes answerIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+details[open] > p {
+  animation: answerIn 0.35s ease-out;
+}
+
+/* ---------- Button micro-interaction ---------- */
+.btn-press {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+.btn-press:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px -10px rgba(16, 185, 129, 0.6);
+}
+.btn-press:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: none;
+}
+
+/* ---------- Respect "reduce motion" everywhere ---------- */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
