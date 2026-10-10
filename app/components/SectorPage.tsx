@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Reveal from "./Reveal";
-import SampleOrder, { type SampleOrderProps } from "./SampleOrder";
+import LaunchKit, { type LaunchKitProps } from "./LaunchKit";
 import { CONTACT } from "../lib/content";
 import { layeredBg, type Slot } from "../lib/images";
 import { headingStyle } from "../lib/styles";
@@ -41,7 +41,7 @@ export type SectorConfig = {
   ctaImage: Slot;
   plansBackground: string;
   hero: { title: string; body: string };
-  sample: SampleOrderProps;
+  launch: LaunchKitProps;
   features: { title: string; intro: string; items: Feature[] };
   stepsTitle: string;
   steps: Step[];
@@ -125,7 +125,7 @@ export default function SectorPage({ config }: { config: SectorConfig }) {
               </div>
             </div>
 
-            <SampleOrder theme={config.theme} sample={config.sample} />
+            <LaunchKit theme={config.theme} kit={config.launch} />
           </div>
         </div>
       </section>

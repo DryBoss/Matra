@@ -20,16 +20,16 @@ const CONFIG: SectorConfig = {
     body: "Clinics, tuition centres, gyms, salons, shops, schools and small organisations: if your work does not fit a ready-made page, we build the website, database or automation you actually need. We build a first version for free, and you pay as it starts earning.",
   },
 
-  sample: {
-    caption: "Sample project, Blueprint Plan",
-    badge: "Paid via bKash",
-    itemLabel: "Clinic appointment fee",
-    itemAmount: "৳500",
-    feeLabel: "Agreed fee per booking (3%)",
-    feeAmount: "৳15",
-    keepLabel: "You keep",
-    keepAmount: "৳485",
-    note: "The fee is agreed with you first. No usage, no fee.",
+  launch: {
+    caption: "Launch kit, Blueprint Plan",
+    badge: "First version built",
+    items: [
+      "We learn how your work runs",
+      "Free first version built for you",
+      "Changes until it fits",
+      "Fee agreed with you first",
+    ],
+    note: "No usage, no fee. The price is agreed before we start.",
   },
 
   features: {
@@ -86,14 +86,14 @@ const CONFIG: SectorConfig = {
     },
     {
       title: "Grow it step by step",
-      body: "Add features as you need them, and move to a flat plan when it works out cheaper than paying per use.",
+      body: "Add features as you need them, and move to Builder or Partner and pay the build off with a monthly fee.",
     },
   ],
 
   plans: {
     title: "Flexible pricing",
     intro:
-      "Start with a free first version and pay as it earns. Move to a flat monthly price when your system is busy and it works out cheaper.",
+      "Start free on our standard design. When you want the website to be truly yours, pay it off with a monthly fee, and it drops to hosting only once it is covered.",
     featuredBadge: "Best for most projects",
     tiers: [
       {
@@ -101,14 +101,14 @@ const CONFIG: SectorConfig = {
         image: IMAGES.cuBlueprint,
         price: "৳0",
         unit: "/mo",
-        highlight: "Free first version",
+        highlight: "Free forever",
         description:
           "Zero risk to start. We plan and build a first working version, and you pay only a small agreed fee when it is used.",
         features: [
           "Free planning call and first version",
-          "Small fee per use, agreed before we start",
+          "Built on Matra's standard modules, with a small Matra credit",
+          "Limited editing in the app, small fee per use agreed before we start",
           "Hosting on a Matra subdomain",
-          "No fixed monthly fees",
         ],
         cta: "Start for free",
         featured: false,
@@ -116,16 +116,17 @@ const CONFIG: SectorConfig = {
       {
         name: "Builder Plan",
         image: IMAGES.cuBuilder,
-        price: "৳1,500",
+        price: "৳1,500+",
         unit: "/mo",
-        highlight: "From, depending on scope",
+        highlight: "Pay it off over time",
         description:
-          "For systems that are in daily use. Pay one flat price and stop paying per use, with the exact amount agreed up front.",
+          "Your site, on easy terms. The website price depends on what you need, and what you pay counts toward it until it is paid off.",
         features: [
-          "0% fee on everything you earn through it",
-          "Cost drops over time as the build is paid off",
-          "Option to export code & database",
-          "Free updates and small changes",
+          "Build price is agreed up front and paid off through the monthly fee",
+          "Light customization: pick a layout, your logo, colours and sections",
+          "Unlimited content editing in the app, no Matra credit",
+          "Your own domain (yearly renewal applies)",
+          "After it is paid off: hosting only (৳200/mo) and optional code & database export",
         ],
         cta: "Choose Builder",
         featured: true,
@@ -135,13 +136,13 @@ const CONFIG: SectorConfig = {
         image: IMAGES.cuPartner,
         price: "Let's talk",
         unit: "",
-        highlight: "Custom domain & priority",
+        highlight: "Custom design",
         description:
-          "For larger or growing businesses. Your own domain, bigger projects, and a team that builds new features with you.",
+          "For larger or growing businesses that want a design and features made just for them. The price depends on what we agree to build.",
         features: [
-          "Your own domain (yourbusiness.com)",
+          "Fully custom design and extra features",
+          "Deposit of 20 to 30%, the rest paid off through the monthly fee",
           "Priority support and faster changes",
-          "Larger features and integrations",
           "Everything in Builder",
         ],
         cta: "Talk to us",
@@ -152,15 +153,15 @@ const CONFIG: SectorConfig = {
     guide: [
       {
         lead: "Not sure what you need yet?",
-        text: "Start on Blueprint. We plan it with you and build a first version for free.",
+        text: "Start on Blueprint. We plan it with you and build a first version for free, with basic editing in the app.",
       },
       {
         lead: "Already using it every day?",
-        text: "Builder gives you a flat monthly price, 0% fees and the option to take your code and database with you.",
+        text: "Builder is for systems in daily use. You get light customization and full editing, and the build price, agreed up front, is paid off through the monthly fee.",
       },
       {
         lead: "Growing fast?",
-        text: "Partner adds your own domain, priority support and larger features. We agree the price together.",
+        text: "Partner gets you a fully custom design and extra features. We agree the price and a small deposit first, and the rest is paid off through the monthly fee.",
       },
     ],
   },
@@ -177,12 +178,20 @@ const CONFIG: SectorConfig = {
         a: "Yes. We build a first working version at no cost, and agree how you will pay before we start. On the Blueprint plan you only pay a small fee when it is actually used.",
       },
       {
+        q: "What are the limits of the free plan?",
+        a: "The free plan uses our standard design with a small Matra credit, and you can edit text, prices and up to the basics in the app. Builder removes those limits.",
+      },
+      {
+        q: "What does \"pay it off\" mean?",
+        a: "On Builder and Partner the website has a price that depends on the site you need, so a portfolio costs less than a full business system. We agree it with you before we start. Your monthly fee counts toward it until it is covered. Once it is paid off you only pay for hosting, and you can take your code and database with you.",
+      },
+      {
         q: "How do you decide the price?",
-        a: "We look at what you need and agree on a plan together before building. You will never be surprised by a bill, and you can switch to a flat monthly price once it makes sense.",
+        a: "We look at what you need and agree on a plan together before building. You will never be surprised by a bill, and you can move to a monthly plan and pay the build off over time once it makes sense.",
       },
       {
         q: "Who owns the system?",
-        a: "On the Builder and Partner plans you can take your code and database with you. On Blueprint, we host and run it for you.",
+        a: "On the Builder and Partner plans you can take your code and database with you once the build is paid off. On Blueprint, we host and run it for you.",
       },
       {
         q: "My work is already covered by another page. Should I use that one?",

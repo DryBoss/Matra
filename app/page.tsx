@@ -10,7 +10,7 @@ import {
   Wrench,
 } from "lucide-react";
 import Reveal from "./components/Reveal";
-import SampleBooking from "./components/SampleBooking";
+import GoLiveTimeline from "./components/GoLiveTimeline";
 import { TESTIMONIALS } from "./lib/content";
 import { svgBg } from "./lib/images";
 import { headingStyle } from "./lib/styles";
@@ -63,9 +63,7 @@ function Hero() {
             className="animate-fade-up mt-6 max-w-xl text-lg leading-relaxed text-slate-200"
             style={{ animationDelay: "220ms" }}
           >
-            We build your digital system for free. You pay only when you make
-            money: a small fee per transaction, or one flat monthly price once
-            you grow.
+            We build your digital system for free. Start on our standard design and pay only when you make money. Want it fully yours? Pay the website off with a simple monthly fee.
           </p>
 
           <div
@@ -87,7 +85,7 @@ function Hero() {
           </div>
         </div>
 
-        <SampleBooking />
+        <GoLiveTimeline />
       </div>
     </section>
   );

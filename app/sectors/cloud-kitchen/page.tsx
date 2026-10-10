@@ -20,22 +20,22 @@ const CONFIG: SectorConfig = {
     body: "Take orders straight from your own website, see every order on a live kitchen board, and track bKash and cash payments automatically. Start for free and pay only a small fee per order.",
   },
 
-  sample: {
-    caption: "Sample order, Simmer Plan",
-    badge: "Paid via bKash",
-    itemLabel: "2 chicken biryani combos",
-    itemAmount: "৳900",
-    feeLabel: "Our fee for this order (5%)",
-    feeAmount: "৳45",
-    keepLabel: "You keep",
-    keepAmount: "৳855",
-    note: "No order, no fee. Set-up costs you nothing.",
+  launch: {
+    caption: "Launch kit, Simmer Plan",
+    badge: "Kitchen is live",
+    items: [
+      "Your own ordering website",
+      "Live kitchen board",
+      "bKash and cash tracking",
+      "Top dishes and peak hours report",
+    ],
+    note: "Set-up costs you nothing. You pay only per order.",
   },
 
   features: {
     title: "Included in every plan",
     intro:
-      "The same full system on every plan. The plans only differ in how you pay and whether you get your own custom domain.",
+      "Every plan runs on the same system. The free plan uses our standard design and has editing limits. The paid plans unlock full editing, customization and your own branding.",
     items: [
       {
         icon: UtensilsCrossed,
@@ -85,15 +85,15 @@ const CONFIG: SectorConfig = {
       body: "Every order appears on your kitchen board and in your customer records the moment it is placed.",
     },
     {
-      title: "Pay per usage",
-      body: "Start with our pay-as-you-go plan and pay a small percentage per order. Upgrade to a flat plan to keep 100% of your sales.",
+      title: "Start free, then own it",
+      body: "Start on the free plan with our standard design. Move to Sizzle and pay the website off with a monthly fee, then keep it for hosting only.",
     },
   ],
 
   plans: {
     title: "Flexible pricing",
     intro:
-      "Start free and pay per order. Switch to a flat monthly price when your orders grow and it works out cheaper.",
+      "Start free on our standard design. When you want the website to be truly yours, pay it off with a monthly fee, and it drops to hosting only once it is covered.",
     featuredBadge: "Best for busy kitchens",
     tiers: [
       {
@@ -101,14 +101,14 @@ const CONFIG: SectorConfig = {
         image: IMAGES.kSimmer,
         price: "৳0",
         unit: "/mo",
-        highlight: "Pay as you go",
+        highlight: "Free forever",
         description:
-          "Zero risk to start. You only pay when customers order through your website.",
+          "Zero risk to start. Go live on our standard design and pay only when customers use it.",
         features: [
           "5% fee on direct website orders",
-          "Pay only for active usage or extra features",
+          "Standard Matra design with a \"Powered by Matra\" credit",
+          "Edit text and prices, up to 15 dishes and 5 photos in the app",
           "Full kitchen board, CRM & analytics",
-          "No fixed monthly fees",
         ],
         cta: "Start for free",
         featured: false,
@@ -118,14 +118,15 @@ const CONFIG: SectorConfig = {
         image: IMAGES.kSizzle,
         price: "৳500",
         unit: "/mo",
-        highlight: "Zero setup fee & Data ownership",
+        highlight: "Pay it off over time",
         description:
-          "The smartest choice once orders keep coming. Stop paying per order and eventually just pay for basic hosting.",
+          "Your site, on easy terms. The website price depends on what you need, and what you pay counts toward it until it is paid off.",
         features: [
-          "0% fee on all orders",
-          "Cost drops to ৳200/mo over time",
-          "Option to export code & database",
-          "Free custom Matra subdomain",
+          "Website price is agreed up front and paid off through the monthly fee, with no per-order fee",
+          "Light customization: pick a layout, your logo, colours and sections",
+          "Unlimited content editing in the app, no Matra credit",
+          "Your own domain (yearly renewal applies)",
+          "After it is paid off: hosting only (৳200/mo) and optional code & database export",
         ],
         cta: "Choose Sizzle",
         featured: true,
@@ -133,18 +134,18 @@ const CONFIG: SectorConfig = {
       {
         name: "Feast Plan",
         image: IMAGES.kFeast,
-        price: "৳1,000",
+        price: "৳1,000+",
         unit: "/mo",
-        highlight: "Custom domain",
+        highlight: "Custom design",
         description:
-          "Premium branding. A ৳2,000 one-time setup fee gets your kitchen its own web address.",
+          "For larger or growing businesses that want a design and features made just for them. The price depends on what we agree to build.",
         features: [
-          "Your own domain (yourkitchen.com)",
-          "Yearly domain renewal applies",
-          "Cost drops over time like Sizzle",
+          "Fully custom design and extra features",
+          "Deposit of 20 to 30%, the rest paid off through the monthly fee",
+          "Priority support and faster changes",
           "Everything in Sizzle",
         ],
-        cta: "Choose Feast",
+        cta: "Talk to us",
         featured: false,
       },
     ],
@@ -152,15 +153,15 @@ const CONFIG: SectorConfig = {
     guide: [
       {
         lead: "Just starting out?",
-        text: "Our Simmer plan costs nothing upfront. You only pay a 5% fee on direct website orders and for active platform usage.",
+        text: "Our Simmer plan costs nothing upfront. You get our standard design, edit the basics in the app, and pay only a 5% fee on direct website orders.",
       },
       {
-        lead: "Getting busy?",
-        text: "The Sizzle plan charges a flat ৳500/month (which drops to ৳200 over time). You pay 0% fee and even own your database.",
+        lead: "Ready to make it yours?",
+        text: "Sizzle lets you customize the look, edit everything in the app and remove our credit. The website price is agreed up front, depends on your site, and is paid off through the monthly fee, with no per-order fee, then you only pay for hosting.",
       },
       {
-        lead: "Building a brand?",
-        text: "Upgrade to the Feast plan to get your own web address with a small one-time setup fee.",
+        lead: "Need something special?",
+        text: "Feast gets you a fully custom design and extra features. We agree the price and a small deposit first, and the rest is paid off through the monthly fee.",
       },
     ],
   },
@@ -171,6 +172,14 @@ const CONFIG: SectorConfig = {
       {
         q: "Is it really free to start?",
         a: "Yes. Setting up your ordering website costs nothing, and our base plan has no fixed monthly fee. You only pay a 5% fee on direct website orders or for active platform usage.",
+      },
+      {
+        q: "What are the limits of the free plan?",
+        a: "The free plan uses our standard design with a small Matra credit, and you can edit text, prices and up to 15 dishes and 5 photos in the app. Sizzle removes those limits.",
+      },
+      {
+        q: "What does \"pay it off\" mean?",
+        a: "On Sizzle and Feast the website has a price that depends on the site you need, so a portfolio costs less than a full business system. We agree it with you before we start. Your monthly fee counts toward it until it is covered. Once it is paid off you only pay for hosting, and you can take your code and database with you.",
       },
       {
         q: "Do I need a restaurant or dining space?",
@@ -190,7 +199,7 @@ const CONFIG: SectorConfig = {
       },
       {
         q: "Can I change plans later?",
-        a: "Yes. Many kitchens begin on the pay-as-you-go plan and move to our flat Sizzle plan once they want 0% fees and complete data ownership.",
+        a: "Yes. Most kitchens begin on Simmer and move to Sizzle when they want full editing, their own branding and no per-order fees. Feast is there if you want a custom design.",
       },
       {
         q: "Do I need technical skills?",

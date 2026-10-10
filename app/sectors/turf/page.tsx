@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Check, ChevronDown, Mail, MessageCircle } from "lucide-react";
 import Reveal from "../../components/Reveal";
-import SampleBooking from "../../components/SampleBooking";
+import LaunchKit from "../../components/LaunchKit";
 import { CONTACT, FEATURES, TIERS } from "../../lib/content";
 import { IMAGES, layeredBg } from "../../lib/images";
 import { headingStyle } from "../../lib/styles";
@@ -27,8 +27,8 @@ const STEPS = [
     body: "Every bKash payment is tracked. Use your analytics dashboard to see your earnings, peak hours, and popular slots.",
   },
   {
-    title: "Pay per usage",
-    body: "Start with our pay-as-you-go plan and pay a small percentage per booking. Upgrade to a flat plan to keep 100% of your earnings.",
+    title: "Start free, then own it",
+    body: "Start on the free plan with our standard design. Move to Pro League and pay the website off with a monthly fee, then keep it for hosting only.",
   },
 ];
 
@@ -38,12 +38,20 @@ const FAQ = [
     a: "Yes. Setting up your booking website costs nothing, and our base plan has no fixed monthly fee. You only pay a 5% fee on direct website orders or for active platform usage.",
   },
   {
+    q: "What are the limits of the free plan?",
+    a: "The free plan uses our standard design with a small Matra credit, and you can edit text, prices and up to 2 pitches and 5 photos in the app. Pro League removes those limits.",
+  },
+  {
+    q: "What does \"pay it off\" mean?",
+    a: "On Pro League and Champions the website has a price that depends on the site you need, so a portfolio costs less than a full business system. We agree it with you before we start. Your monthly fee counts toward it until it is covered. Once it is paid off you only pay for hosting, and you can take your code and database with you.",
+  },
+  {
     q: "Do my customers need to install an app?",
     a: "No. They can book everything automatically through your custom website from any browser on their phone or computer.",
   },
   {
     q: "Can I change plans later?",
-    a: "Yes. Many turfs begin on the pay-as-you-go plan and move to our flat Pro League plan once they want 0% commissions and complete data ownership.",
+    a: "Yes. Most turfs begin on Kickoff and move to Pro League when they want full editing, their own branding and no per-order fees. Champions is there if you want a custom design.",
   },
   {
     q: "Do I need technical skills?",
@@ -51,7 +59,7 @@ const FAQ = [
   },
   {
     q: "What is the difference between the base and premium plans?",
-    a: "The Kickoff plan has zero monthly fees but takes a small cut of bookings. Pro League gives you 0% commission and database ownership, while Champions adds a premium custom domain.",
+    a: "Kickoff is free, uses our standard design and has editing limits. Pro League adds light customization, full editing and your own domain, and the website price is paid off through the monthly fee. Champions is a fully custom design.",
   },
 ];
 
@@ -134,7 +142,20 @@ function TurfHero() {
             </div>
           </div>
 
-          <SampleBooking />
+          <LaunchKit
+            theme="emerald"
+            kit={{
+              caption: "Launch kit, Kickoff Plan",
+              badge: "Booking site is live",
+              items: [
+                "Players see open slots and book online",
+                "No double-bookings",
+                "Paid and pending bKash bookings in one list",
+                "Customer records and peak-hour stats",
+              ],
+              note: "Set-up costs you nothing. You pay only when you get bookings.",
+            }}
+          />
         </div>
       </div>
     </section>
@@ -158,8 +179,7 @@ function WhatYouGet() {
               Included in every plan
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-slate-600">
-              The same full system on every plan. The plans only differ in how
-              you pay and whether you get your own custom domain.
+              Every plan runs on the same system. The free plan uses our standard design and has editing limits. The paid plans unlock full editing, customization and your own branding.
             </p>
           </div>
         </Reveal>
@@ -272,8 +292,7 @@ function Plans() {
               Flexible pricing
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-slate-600">
-              Start free and pay per usage. Switch to a flat monthly price when
-              your bookings grow and it works out cheaper.
+              Start free on our standard design. When you want the website to be truly yours, pay it off with a monthly fee, and it drops to hosting only once it is covered.
             </p>
           </div>
         </Reveal>
@@ -388,19 +407,13 @@ function Plans() {
             </h3>
             <ul className="mt-4 space-y-3 leading-relaxed text-slate-700">
               <li>
-                <strong>Just starting out?</strong> Our Kickoff plan costs
-                nothing upfront. You only pay a 5% fee on direct website orders
-                and for active platform usage.
+                <strong>Just starting out?</strong> Our Kickoff plan costs nothing upfront. You get our standard design, edit the basics in the app, and pay only a 5% fee on direct website bookings.
               </li>
               <li>
-                <strong>Getting busy?</strong> The Pro League plan charges a
-                flat ৳500/month (which drops to ৳200 over time). You pay 0%
-                commission and even own your database.
+                <strong>Ready to make it yours?</strong> Pro League lets you customize the look, edit everything in the app and remove our credit. The website price is agreed up front, depends on your site, and is paid off through the monthly fee, with no per-order fee, then you only pay for hosting.
               </li>
               <li>
-                <strong>Building a brand?</strong> Upgrade to the Champions plan
-                to get your own custom web address with a small one-time setup
-                fee.
+                <strong>Need something special?</strong> Champions gets you a fully custom design and extra features. We agree the price and a small deposit first, and the rest is paid off through the monthly fee.
               </li>
             </ul>
           </div>

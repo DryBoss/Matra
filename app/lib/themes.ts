@@ -3,6 +3,24 @@
  * see written out in full, so every class below is spelled out literally.
  */
 export const THEMES = {
+  emerald: {
+    heroBg: "bg-emerald-950",
+    outline: "focus-visible:outline-emerald-300",
+    outlineDark: "focus-visible:outline-emerald-400",
+    outlineLight: "focus-visible:outline-emerald-600",
+    btn: "bg-emerald-500 text-slate-950 hover:bg-emerald-400",
+    iconBox: "bg-emerald-100 text-emerald-700",
+    check: "text-emerald-600",
+    checkDark: "text-emerald-400",
+    step: "bg-emerald-600",
+    featuredRing: "ring-emerald-500",
+    featuredBadge: "bg-emerald-500 text-slate-950",
+    chip: "bg-emerald-50 text-emerald-700",
+    chipDark: "bg-emerald-500/15 text-emerald-300",
+    liveBadge: "bg-emerald-500/15 text-emerald-300",
+    ping: "bg-emerald-400",
+    keep: "text-emerald-400",
+  },
   blue: {
     heroBg: "bg-blue-950",
     outline: "focus-visible:outline-blue-300",

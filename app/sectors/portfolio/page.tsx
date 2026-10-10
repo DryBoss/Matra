@@ -20,23 +20,22 @@ const CONFIG: SectorConfig = {
     body: "Designers, developers, photographers, students and freelancers: show your best work on a fast, professional website, let clients message you directly, and see who is visiting. Get live for free and upgrade when you are ready.",
   },
 
-  sample: {
-    caption: "Sample month, Draft Plan",
+  launch: {
+    caption: "Launch kit, Draft Plan",
     badge: "Site is live",
-    itemLabel: "Website build & set-up",
-    itemAmount: "৳0",
-    feeLabel: "Hosting on a Matra subdomain",
-    feeAmount: "৳0",
-    feePrefix: "",
-    keepLabel: "You pay",
-    keepAmount: "৳0",
+    items: [
+      "Your work, shown professionally",
+      "Client enquiry form",
+      "Visitor stats",
+      "Free Matra subdomain",
+    ],
     note: "Get online first. Upgrade only when you want your own domain.",
   },
 
   features: {
     title: "Included in every plan",
     intro:
-      "The same full website on every plan. The plans only differ in how it is hosted and whether you get your own custom domain.",
+      "Every plan runs on the same system. The free plan uses our standard design and has editing limits. The paid plans unlock full editing, customization and your own branding.",
     items: [
       {
         icon: Palette,
@@ -87,14 +86,14 @@ const CONFIG: SectorConfig = {
     },
     {
       title: "Upgrade when ready",
-      body: "Keep the free plan as long as you like. Move to a flat plan for a cleaner site, your own code, or your own domain.",
+      body: "Keep the free plan as long as you like. Move to Showcase to remove our credit, customize your site and pay it off over time.",
     },
   ],
 
   plans: {
     title: "Flexible pricing",
     intro:
-      "Go live for free. Upgrade to a flat monthly price when you want to remove our credit or use your own domain.",
+      "Start free on our standard design. When you want the website to be truly yours, pay it off with a monthly fee, and it drops to hosting only once it is covered.",
     featuredBadge: "Best for freelancers",
     tiers: [
       {
@@ -102,14 +101,14 @@ const CONFIG: SectorConfig = {
         image: IMAGES.pfDraft,
         price: "৳0",
         unit: "/mo",
-        highlight: "Free to start",
+        highlight: "Free forever",
         description:
-          "Zero risk to start. Get your portfolio live at no cost and see how it works for you.",
+          "Zero risk to start. Get your portfolio live at no cost, on our standard design.",
         features: [
-          "Free custom Matra subdomain",
-          "Small \"Built by Matra\" credit in the footer",
+          "Free Matra subdomain",
+          "Standard Matra design with a \"Built by Matra\" credit",
+          "Edit text and up to 3 projects in the app",
           "Project pages, contact form & enquiry inbox",
-          "No fixed monthly fees",
         ],
         cta: "Start for free",
         featured: false,
@@ -119,14 +118,15 @@ const CONFIG: SectorConfig = {
         image: IMAGES.pfShowcase,
         price: "৳300",
         unit: "/mo",
-        highlight: "Zero setup fee & Data ownership",
+        highlight: "Pay it off over time",
         description:
-          "The smartest choice once you start getting clients. A cleaner site that you fully own.",
+          "Your site, on easy terms. The website price depends on what you need, and what you pay counts toward it until it is paid off.",
         features: [
-          "No Matra credit on your site",
-          "Visitor analytics included",
-          "Cost drops to ৳150/mo over time",
-          "Option to export code & database",
+          "Website price is agreed up front and paid off through the monthly fee",
+          "Light customization: pick a layout, your logo, colours and sections",
+          "Unlimited content editing in the app, no Matra credit",
+          "Your own domain (yearly renewal applies)",
+          "After it is paid off: hosting only (৳150/mo) and optional code & database export",
         ],
         cta: "Choose Showcase",
         featured: true,
@@ -134,34 +134,34 @@ const CONFIG: SectorConfig = {
       {
         name: "Signature Plan",
         image: IMAGES.pfSignature,
-        price: "৳600",
+        price: "৳600+",
         unit: "/mo",
-        highlight: "Custom domain",
+        highlight: "Custom design",
         description:
-          "Premium branding. A ৳2,000 one-time setup fee gets your name its own web address.",
+          "For larger or growing businesses that want a design and features made just for them. The price depends on what we agree to build.",
         features: [
-          "Your own domain (yourname.com)",
-          "Yearly domain renewal applies",
-          "Cost drops over time like Showcase",
+          "Fully custom design and extra features",
+          "Deposit of 20 to 30%, the rest paid off through the monthly fee",
+          "Priority support and faster changes",
           "Everything in Showcase",
         ],
-        cta: "Choose Signature",
+        cta: "Talk to us",
         featured: false,
       },
     ],
     guideTitle: "Which plan fits you?",
     guide: [
       {
-        lead: "Just getting started?",
-        text: "Our Draft plan costs nothing. You get a live portfolio on a Matra subdomain, with a small credit in the footer.",
+        lead: "Just starting out?",
+        text: "Our Draft plan costs nothing. You get a live portfolio on a Matra subdomain with our standard design, a small credit in the footer, and basic editing in the app.",
       },
       {
-        lead: "Starting to land clients?",
-        text: "The Showcase plan is a flat ৳300/month (dropping to ৳150 over time). The credit is removed, you get analytics, and you own your code and database.",
+        lead: "Ready to make it yours?",
+        text: "The Showcase plan lets you customize the look, edit everything in the app and remove our credit. The website price is agreed up front and depends on your site. It is paid off through the monthly fee, then you only pay hosting.",
       },
       {
-        lead: "Building a personal brand?",
-        text: "Upgrade to the Signature plan to get your own web address with a small one-time setup fee.",
+        lead: "Need something special?",
+        text: "Signature gets you a fully custom design and extra features. We agree the price and a small deposit first, and the rest is paid off through the monthly fee.",
       },
     ],
   },
@@ -174,24 +174,32 @@ const CONFIG: SectorConfig = {
         a: "Yes. Building and launching your portfolio on a Matra subdomain costs nothing, and the Draft plan has no monthly fee.",
       },
       {
+        q: "What are the limits of the free plan?",
+        a: "The free plan uses our standard design with a small Matra credit, and you can edit text, prices and up to 3 projects in the app. Showcase removes those limits.",
+      },
+      {
+        q: "What does \"pay it off\" mean?",
+        a: "On Showcase and Signature the website has a price that depends on the site you need, so a portfolio costs less than a full business system. We agree it with you before we start. Your monthly fee counts toward it until it is covered. Once it is paid off you only pay for hosting, and you can take your code and database with you.",
+      },
+      {
         q: "Who is this for?",
         a: "Anyone who needs to show their work online: designers, developers, photographers, writers, video editors, architects, students and freelancers.",
       },
       {
         q: "Why not use a free website builder?",
-        a: "Builders give you a template that you do everything inside yourself. We design and build the site for you, and it is fast, mobile-friendly and made around your projects. With the Showcase plan you can also take the code with you.",
+        a: "Builders give you a template that you do everything inside yourself. We design and build the site for you, and it is fast, mobile-friendly and made around your projects. Once Showcase is paid off you can also take the code with you.",
       },
       {
         q: "Can I update my projects later?",
-        a: "Yes. Send us new work any time and we add it. We can also set things up so you can add projects yourself.",
+        a: "Yes. On Draft you can edit text and add up to 3 projects yourself in the app. Showcase removes that limit, and you can always send us new work to add.",
       },
       {
         q: "Can I use my own domain?",
-        a: "Yes, on the Signature plan. You pay a small one-time setup fee, and the yearly domain renewal goes to the domain registrar.",
+        a: "Yes, on the Showcase plan or higher. The yearly domain renewal goes to the domain registrar.",
       },
       {
         q: "Can I change plans later?",
-        a: "Yes. Most people begin on Draft and move to Showcase or Signature when they want a cleaner site or their own domain.",
+        a: "Yes. Most people begin on Draft and move to Showcase when they want full editing, their own branding and no per-order fees. Signature is there if you want a custom design.",
       },
       {
         q: "Do I need technical skills?",
