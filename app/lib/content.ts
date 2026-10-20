@@ -17,3 +17,9 @@ export const CONTACT = {
 export function waLink(message = "Hi Matra, I sell on Facebook and want an online store for my page.") {
   return `https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(`${message} [Site]`)}`;
 }
+
+/**
+ * Where "Create your store" should send people (your app or web dashboard sign-up).
+ * Leave empty until it is ready: the buttons then fall back to WhatsApp.
+ */
+export const APP_URL = "";

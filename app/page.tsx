@@ -1,7 +1,20 @@
-import { Check, ChevronDown, ClipboardList, Mail, MessageCircle, Store, Truck } from "lucide-react";
+import {
+  Check,
+  ChevronDown,
+  ClipboardList,
+  Mail,
+  MapPin,
+  MessageCircle,
+  PackageX,
+  Smartphone,
+  Store,
+  Truck,
+} from "lucide-react";
 import Reveal from "./components/Reveal";
 import LaunchKit from "./components/LaunchKit";
-import { CONTACT, waLink } from "./lib/content";
+import ProductVisuals from "./components/ProductVisuals";
+import TrustSection from "./components/TrustSection";
+import { APP_URL, CONTACT, waLink } from "./lib/content";
 import { IMAGES, layeredBg } from "./lib/images";
 import { headingStyle } from "./lib/styles";
 import { THEMES } from "./lib/themes";
@@ -15,7 +28,7 @@ const FEATURES = [
   {
     icon: Store,
     title: "Your own online store",
-    body: "Give customers a proper store they can open from your Facebook page, Messenger or WhatsApp, instead of asking for prices in the inbox.",
+    body: "Set up a proper store in minutes and open it from your Facebook page, Messenger or WhatsApp, instead of asking for prices in the inbox.",
     points: [
       "Share one link everywhere you sell",
       "Photos, sizes, colours and prices in one place",
@@ -42,23 +55,53 @@ const FEATURES = [
       "Daily sales and monthly records without Excel",
     ],
   },
+  {
+    icon: MapPin,
+    title: "Automatic delivery fees",
+    body: "Stop calculating delivery charges by hand. The right fee is added at checkout based on where your customer lives.",
+    points: [
+      "Separate Inside Dhaka and Outside Dhaka charges",
+      "Set your rates once, applied to every order",
+      "Customers see the full total before they order",
+    ],
+  },
+  {
+    icon: PackageX,
+    title: "Automatic out-of-stock",
+    body: "Sold your last piece? The product switches to Out of Stock by itself, so you never sell what you do not have.",
+    points: [
+      "Stock counts down with every order",
+      "Sold-out items cannot be ordered",
+      "Add stock and the product is back on sale",
+    ],
+  },
+  {
+    icon: Smartphone,
+    title: "Run it all from your phone",
+    body: "No laptop or PC needed. Manage your whole shop from the mobile app, or from the web dashboard when you prefer a bigger screen.",
+    points: [
+      "Update inventory and prices in a few taps",
+      "Track and update orders on the go",
+      "Set up, edit and sell without a PC",
+    ],
+  },
 ];
 
 const STEPS = [
   {
-    title: "We build your store",
-    body: "Send us your products, prices, sizes and delivery charges. We build your online store and set everything up for you.",
+    title: "Sign up in minutes",
+    body: "Create your account on the mobile app or the web dashboard. No waiting, no appointment. Your store is ready to fill straight away.",
+  },
+  {
+    title: "Add your products yourself",
+    body: "Use the simple forms to add photos, prices, sizes, stock and your delivery charges. Change anything, any time, from your phone.",
   },
   {
     title: "Share one link",
     body: "Put your store link on your Facebook page, in Messenger auto-replies and on WhatsApp. Customers browse and order without waiting for a reply.",
   },
   {
-    title: "Orders arrive in one list",
-    body: "Each order lands in your order manager with the customer's details, so you can confirm it, pack it and hand it to your courier.",
-  },
-  {
-    title: "Start free, then own it",
+    title: "Sell now, upgrade when ready",
     body: "Start on the free plan with our standard design. Move to Scale and pay the website off with a monthly fee, then keep it for hosting only.",
   },
 ];
@@ -106,7 +149,7 @@ const TIERS = [
     unit: "/mo",
     highlight: "Custom design",
     description:
-      "For larger or growing businesses that want a design and features made just for them. The price depends on what we agree to build.",
+      "For larger or growing businesses that want a design and features made just for them. The price depends on what we agree on together.",
     features: [
       "Fully custom design and extra features",
       "Deposit of 20 to 30%, the rest paid off through the monthly fee",
@@ -136,7 +179,7 @@ const GUIDE = [
 const FAQ = [
   {
     q: "Is it really free to start?",
-    a: "Yes. Setting up your store costs nothing, and our base plan has no fixed monthly fee. You only pay a 3% fee on direct store orders.",
+    a: "Yes. Creating your store costs nothing, and our base plan has no fixed monthly fee. You only pay a 3% fee on direct store orders.",
   },
   {
     q: "What are the limits of the free plan?",
@@ -164,7 +207,19 @@ const FAQ = [
   },
   {
     q: "Do I need technical skills?",
-    a: "No. We build the store and set up the order manager for you. You only add products and watch the orders come in.",
+    a: "No. You set up and manage your store yourself with simple forms in the app: add a product name, photo, price and stock, and your store updates straight away. If you can post on Facebook, you can run your shop.",
+  },
+  {
+    q: "Can I run my shop from my phone?",
+    a: "Yes. Inventory, pricing and order tracking all work from your smartphone, so you do not need a PC. The web dashboard is there if you want a bigger screen.",
+  },
+  {
+    q: "How are delivery charges handled?",
+    a: "You set one charge for Inside Dhaka and one for Outside Dhaka. The right fee is added to each order at checkout automatically.",
+  },
+  {
+    q: "What if I sell the last piece of a product?",
+    a: "The product switches to Out of Stock automatically, so customers cannot order what you no longer have. Add stock and it goes back on sale.",
   },
 ];
 
@@ -201,9 +256,10 @@ export default function Home() {
                 className="animate-fade-up mt-6 max-w-xl text-lg leading-relaxed text-slate-200"
                 style={{ animationDelay: "220ms" }}
               >
-                Stop typing the same price in every inbox. Give customers a proper store where they
-                pick, order and choose how to pay, with every order tracked in one list. Start for
-                free and pay only when you sell.
+                Stop typing the same price in every inbox. Set up your own store in minutes from the
+                mobile app or web dashboard, no waiting and no developer. Customers pick, order and
+                pay, and every order is tracked in one list. Free to start, you pay only when you
+                sell.
               </p>
 
               <div
@@ -211,13 +267,17 @@ export default function Home() {
                 style={{ animationDelay: "340ms" }}
               >
                 <a
-                  href={waLink()}
+                  href={APP_URL || waLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`${BTN_BASE} ${t.btn} ${t.outline} gap-2 px-7 py-3.5`}
                 >
-                  <MessageCircle className="h-5 w-5" aria-hidden />
-                  Start for free on WhatsApp
+                  {APP_URL ? (
+                    <Smartphone className="h-5 w-5" aria-hidden />
+                  ) : (
+                    <MessageCircle className="h-5 w-5" aria-hidden />
+                  )}
+                  {APP_URL ? "Create your store free" : "Start for free on WhatsApp"}
                 </a>
                 <a
                   href="#plans"
@@ -231,20 +291,22 @@ export default function Home() {
             <LaunchKit
               theme="blue"
               kit={{
-                caption: "Launch kit, Launch Plan",
-                badge: "Store is live",
+                caption: "Your store, Launch Plan",
+                badge: "Set up in minutes",
                 items: [
-                  "Your store link for your Facebook page",
-                  "Orders in one list",
-                  "Courier and cash on delivery set up",
-                  "Customers see prices, no inbox typing",
+                  "Store link for your Facebook page",
+                  "Delivery fees added automatically",
+                  "Sold-out items switch off by themselves",
+                  "Orders in one list, on your phone",
                 ],
-                note: "Set-up costs you nothing. You pay only when you sell.",
+                note: "Set it up yourself from the app or web dashboard. Free to start, you pay only when you sell.",
               }}
             />
           </div>
         </div>
       </section>
+
+      <ProductVisuals />
 
       {/* --------------------------- What you get -------------------------- */}
       <section id="features" className="scroll-mt-16 py-16 sm:py-24">
@@ -258,14 +320,14 @@ export default function Home() {
                 Included in every plan
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                Every plan runs on the same system. The free plan uses our standard design and has
-                editing limits. The paid plans unlock full editing, customization and your own
-                branding.
+                Every plan runs on the same self-serve system, built for how Facebook sellers actually
+                work. The free plan uses our standard design and has editing limits. The paid plans
+                unlock full editing, customization and your own branding.
               </p>
             </div>
           </Reveal>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map(({ icon: Icon, title, body, points }, i) => (
               <Reveal key={title} delay={i * 120} className="h-full">
                 <article className="group h-full rounded-2xl bg-white p-6 ring-1 ring-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
@@ -333,6 +395,8 @@ export default function Home() {
           </ol>
         </div>
       </section>
+
+      <TrustSection />
 
       {/* -------------------------------- Plans ---------------------------- */}
       <section
@@ -514,18 +578,33 @@ export default function Home() {
               className="text-3xl font-semibold tracking-tight sm:text-4xl"
               style={headingStyle}
             >
-              Tell us about your shop
+              Create your store in minutes
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-slate-200">
-              Send us a message and we will set up your online store for free. You pay nothing until
-              your first order.
+              Sign up, add your products and share your link, all from your phone. Free to start,
+              and you pay nothing until your first order. Questions? Message us any time.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              {APP_URL && (
+                <a
+                  href={APP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${BTN_BASE} ${t.btn} ${t.outline} gap-2 px-7 py-3.5`}
+                >
+                  <Smartphone className="h-5 w-5" aria-hidden />
+                  Create your store free
+                </a>
+              )}
               <a
                 href={waLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${BTN_BASE} ${t.btn} ${t.outline} gap-2 px-7 py-3.5`}
+                className={
+                  APP_URL
+                    ? `${BTN_BASE} ${t.outline} gap-2 border border-slate-400/60 px-7 py-3.5 text-white hover:border-white hover:bg-white/10`
+                    : `${BTN_BASE} ${t.btn} ${t.outline} gap-2 px-7 py-3.5`
+                }
               >
                 <MessageCircle className="h-5 w-5" aria-hidden />
                 Message us on WhatsApp
