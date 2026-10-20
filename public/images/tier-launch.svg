@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice"><style>.rk{animation:rk 2.4s ease-in-out infinite}@keyframes rk{0%,100%{transform:translateY(8px)}50%{transform:translateY(-14px)}}.fire{transform-box:fill-box;transform-origin:50% 0;animation:fire .3s ease-in-out infinite alternate}@keyframes fire{from{transform:scaleY(.8)}to{transform:scaleY(1.15)}}.tw{animation:tw 3s ease-in-out infinite}@keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}@media (prefers-reduced-motion: reduce){*{animation:none !important}}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1740"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs>
+<rect width="1200" height="600" fill="url(#bg)"/>
+<g fill="#fff"><circle class="tw" cx="180" cy="110" r="3"/><circle class="tw" cx="320" cy="300" r="2.5" style="animation-delay:1s"/><circle class="tw" cx="900" cy="90" r="3" style="animation-delay:.5s"/><circle class="tw" cx="1040" cy="260" r="2.5" style="animation-delay:1.8s"/><circle class="tw" cx="760" cy="410" r="2" style="animation-delay:2.3s"/></g>
+<ellipse cx="600" cy="610" rx="420" ry="70" fill="#1e3a8a" opacity="0.7"/>
+<g class="rk">
+<path d="M 600 70 C 660 130 676 230 662 330 H 538 C 524 230 540 130 600 70 Z" fill="#f8fafc"/>
+<path d="M 600 70 C 628 100 644 130 650 160 H 550 C 556 130 572 100 600 70 Z" fill="#38bdf8"/>
+<circle cx="600" cy="230" r="34" fill="#1e3a8a"/><circle cx="600" cy="230" r="24" fill="#7dd3fc"/>
+<path d="M 538 290 L 480 372 L 538 346 Z M 662 290 L 720 372 L 662 346 Z" fill="#38bdf8"/>
+<rect x="566" y="330" width="68" height="16" rx="6" fill="#cbd5e1"/>
+<g class="fire"><path d="M 574 346 Q 600 470 626 346 Z" fill="#fbbf24"/><path d="M 586 346 Q 600 420 614 346 Z" fill="#fff7ed"/></g>
+</g>
+<g transform="translate(160 380)"><rect width="130" height="150" rx="16" fill="#0f172a"/><rect x="8" y="10" width="114" height="130" rx="10" fill="#fff"/><rect x="18" y="22" width="94" height="42" rx="8" fill="#bfdbfe"/><rect x="18" y="74" width="94" height="10" rx="5" fill="#94a3b8"/><rect x="18" y="94" width="60" height="9" rx="4" fill="#cbd5e1"/><rect x="18" y="112" width="94" height="20" rx="10" fill="#2563eb"/></g>
+<g transform="translate(900 400)"><path d="M 20 40 h 110 l -10 100 h -90 z" fill="#fbbf24"/><path d="M 52 40 v -14 a 23 23 0 0 1 46 0 v 14" fill="none" stroke="#f59e0b" stroke-width="9"/><text x="75" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" font-weight="800" fill="#78350f">Tk</text></g>
+</svg>
